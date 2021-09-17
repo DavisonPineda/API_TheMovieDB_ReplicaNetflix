@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcial 2</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/MenuLateral.css">
+</head>
+
+<body>
+
+
+  <!-- nav bar-->
+  <nav class="navbar">
+    <img src="img/logo.png" class="logo" alt="" />
+    <class class="join-box">
+      <p class="join-msg">Ilimitado TV shows & Pelis</p>
+      <button class="btn join-btn">Suscribase hoy</button>
+      <button class="btn">Ingresar</button>
+    </class>
+
+
+    <div class="headermenu">
+      <div class="btn-menu">
+        <label  for="btn-menu" onclick="setGenre()">☰</label>
+      </div>
+    </div>
+
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+      <div class="cont-menu">
+        <nav>
+          <headerBusqueda>
+            <form id="form">
+              <input type="text" placeholder="Search" id="search" class="search">
+
+            </form>
+          </headerBusqueda>
+          <div id="tags" onclick=""></div> <!-- Se crean las Categorias-->
+
+
+
+          <!--Filtro año de lanzamiento-->
+          <div class="filtrados" id="flFecha">
+            <p class="pFiltros"> AÑO LANZAMIENTO</p>
+            <div class="linea"></div>
+            <label class="fLanzamiento">
+              <select name="fYear" id="fYear" onchange="por_fecha()">
+                <option value="year">Seleccionar</option>
+              </select>
+            </label>
+          </div>
+          <!--Fin-->
+
+          <!--Filtro para adultps-->
+          <div class="filtrados" id="flClasificacion">
+            <p class="pFiltros">CLASIFICACIÓN</p>
+
+          </div>
+          <!--Fin-->
+
+          <!--Filtro por tipo-->
+          <div class="filtrados" id="flTipo">
+            <p class="pFiltros">DESCUBRIR</p>
+            <div class="linea"></div>
+            <p class="fTipo">
+              <input type="radio" name="tipo" required value="serie" onchange="evaluar_tipo()" />
+              Series de TV
+            </p>
+            <p class="fTipo">
+              <input type="radio" name="tipo" required value="mejor" onchange="evaluar_tipo()" />
+              Mejor calificadas
+            </p>
+            <p class="fTipo">
+              <input type="radio" name="tipo" required value="proxima" onchange="evaluar_tipo()" />
+              Proximamente
+            </p>
+          </div>
+          <!--Fin-->
+
+        </nav>
+        <label for="btn-menu">✖️</label>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- SEccion principal-->
+  <header class="main" >
+    <h1 class="heading">Pelis</h1>
+    <h1 id="titulo"></h1>
+    <p class="info">
+      Las mejores pelis de la Red, series y cosas para quitar el tiempo,
+      todo esta aqui
+    </p>
+    <pagina id="pagina"> </pagina>
+  </header>
+
+  
+  <!-- se hacen la referncia a los JS en este orden -->
+
+  <script src="js/api.js"></script>
+  <script src="js/Filtros.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/home.js"></script>
+ 
+
+
+</body>
+
+</html>
